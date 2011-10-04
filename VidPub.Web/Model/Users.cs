@@ -11,7 +11,7 @@ namespace VidPub.Web.Model
 {
     public class Users:DynamicModel
     {
-        public Users() : base("Membership_Test", "Users", "ID", "Email") { }
+        public Users() : base("Membership", "Users", "ID", "Email") { }
         
         // DynamicModel _db;
 

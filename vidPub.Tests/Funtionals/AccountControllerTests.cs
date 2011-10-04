@@ -68,11 +68,11 @@ namespace VidPub.Tests.Funtionals
             //make sure user is logged in
             Assert.True(_controller.IsLoggedIn);
 
-            //var c2 = new AccountController(new FakeTokenStore());
-            //c2.LogOn("test@test.com", "password");
+            var c2 = new AccountController(new FakeTokenStore());
+            c2.LogOn("test@test.com", "password");
 
-            ////see if the first controller instance returns true for logged on
-            //Assert.False(_controller.IsLoggedIn);
+            //see if the first controller instance returns true for logged on
+            Assert.False(_controller.IsLoggedIn);
 
 
         }
