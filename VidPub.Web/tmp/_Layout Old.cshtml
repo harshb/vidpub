@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@Page.Title</title>
+    <script type="text/javascript" src="http://use.typekit.com/yxo3unq.js"></script>
+    @HTML.jQuery(false)
+    @HTML.CSS("screen.css")
+    @HTML.CSS("print.css", "print")
+    @HTML.CSS("screen.css")
+    @HTML.CSS("plugins/fancy-type/screen.css")
+    @HTML.Script("jquery.cycle.all.js")
+  
+    <!--[if lt IE 8]><link rel="stylesheet" href="/public/stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
+</head>
+<body>
+    <div class="container">
+        <div class="span-16 prepend-6">
+            @HTML.ImageLink(URL.SiteRoot(), "publishedLogo.bmp")
+        </div>
+        <hr>
+        <hr class="space">
+        <div class="span-7 colborder">
+            <h6>
+                Here's a box</h6>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip.</p>
+        </div>
+        <div class="span-8 colborder">
+            <h6>
+                And another box</h6>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat laboris nisi
+                ut aliquip.</p>
+        </div>
+        <div class="span-7 last">
+            <h6>
+                This box is aligned with the sidebar</h6>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip.</p>
+        </div>
+        <hr>
+        <hr class="space">
+
+
+        <div class="span-15 prepend-1 colborder">
+            <p>
+                @RenderBody()
+            </p>
+            <p>
+                <img src="test.jpg" class="top pull-1 left" alt="test">Lorem ipsum dolor sit amet,
+                <em>consectetuer adipiscing elit</em>. Nunc congue ipsum vestibulum libero. Aenean
+                vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus
+                tempus felis, a ultricies erat ipsum at metus.</p>
+           
+            <hr>
+            <div class="span-7 colborder">
+                <h6>
+                    This is a nested column</h6>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur.</p>
+            </div>
+            <div class="span-7 last">
+                <h6>
+                    This is another nested column</h6>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur.</p>
+            </div>
+        </div>
+        <div class="span-7 last">
+            <h3>
+                A <span class="alt">User Testimonials</span> Sidebar</h3>
+            <p>
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus
+                tellus pulvinar neque, non cursus sem nisi vel augue.</p>
+            <p>
+                Mauris a lectus. Aliquam erat volutpat. Phasellus ultrices mi a sapien. Nunc rutrum
+                egestas lorem. Duis ac sem sagittis elit tincidunt gravida. Mauris a lectus. Aliquam
+                erat volutpat. Phasellus ultrices mi a sapien. Nunc rutrum egestas lorem. Duis ac
+                sem sagittis elit tincidunt gravida.</p>
+            <p class="quiet">
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus
+                tellus pulvinar neque, non cursus sem nisi vel augue.</p>
+            <h5>
+                Incremental leading</h5>
+            <p class="incr">
+                Vestibulum ante ipsum primis in faucibus orci luctus vestibulum ante ipsum primis
+                in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc.
+                Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus
+                sem nisi vel augue. sed aliquet vehicula, lectus tellus.</p>
+            <p class="incr">
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus
+                tellus pulvinar neque, non cursus sem nisi vel augue. sed aliquet vehicula, lectus
+                tellus pulvinar neque, non cursus sem nisi vel augue. ipsum primis in faucibus orci
+                luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis,
+                pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel
+                augue. sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel
+                augue.</p>
+        </div>
+        <hr>
+        <h2 class="alt">
+            You may pick and choose amongst these and many more features, so be bold.</h2>
+        <p>
+          &copy;@DateTime.Now.Year Published, Inc.
+          @Snippets.FooterText();
+        </p>
+        <hr>
+        <p>
+            <a href="http://validator.w3.org/check?uri=referer">Validate  </a>     
+           
+        </p>
+    </div>
+</body>
+</html>

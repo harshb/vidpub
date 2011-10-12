@@ -219,7 +219,10 @@
   <ItemGroup>
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="App_Code\Snippets.cshtml" />
-    <Content Include="Views\Home\_quote.cshtml" />
+    <Content Include="tmp\indexold.cshtml" />
+    <Content Include="App_Code\Quotes.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <None Include="Views\Shared\_LayoutOld.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -3,37 +3,61 @@
     // dynamic router = new System.Web.Mvc.RouteHelper(Url);
 }
 
-
 <script type="text/javascript">
     $(document).ready(function () {
         $('#user_quotes').cycle({
-           // fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-          fx: 'fade',
-          speed: 900,
-          timeout:400,
-          pause:1,
-          pauseOnPagerHover: 0
+            // fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+            fx: 'fade',
+            speed: 900,
+            timeout: 400,
+            pause: 1,
+            pauseOnPagerHover: 0
         });
     });
 </script>
 
-<h2>@ViewBag.Message</h2>
-<p>@Routes.about_path()</p>
+ <!--Content--->
 
+        <div class="span-15 prepend-1 colborder">
+           
+            <p>
+                <img src="test.jpg" class="top pull-1 left" alt="test">Lorem ipsum dolor sit amet,
+                <em>consectetuer adipiscing elit</em>. Nunc congue ipsum vestibulum libero. Aenean
+                vitae justo. Nam eget tellus. Etiam convallis, est eu lobortis mattis, lectus tellus
+                tempus felis, a ultricies erat ipsum at metus.</p>
+           
+            <hr>
+            <div class="span-7 colborder">
+                <h6>
+                    This is a nested column</h6>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur.</p>
+            </div>
+            <div class="span-7 last">
+                <h6>
+                    This is another nested column</h6>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur.</p>
+            </div>
+        </div>
 
-<div id="user_quotes" >
-    @foreach (dynamic item in VidPub.Web.Model.Quotes.FromUsers())
-    {
-      
-        
-        @Quotes.User(item);
-    }
-</div>
+        <!--sidebar--->
+        <div class="span-7 last">
+            <h3><span class="alt">User Testimonials</span> </h3>
 
-<div class="slideshow2">
-		<img src="http://cloud.github.com/downloads/malsup/cycle/beach1.jpg" width="200" height="200" />
-		<img src="http://cloud.github.com/downloads/malsup/cycle/beach2.jpg" width="200" height="200" />
-		<img src="http://cloud.github.com/downloads/malsup/cycle/beach3.jpg" width="200" height="200" />
-		<img src="http://cloud.github.com/downloads/malsup/cycle/beach4.jpg" width="200" height="200" />
-		<img src="http://cloud.github.com/downloads/malsup/cycle/beach5.jpg" width="200" height="200" />
-	</div>
+            <div id="user_quotes" >
+            @foreach (dynamic item in VidPub.Web.Model.Quotes.FromUsers())
+            { @Quotes.User(item); }
+            </div>
+           
+
+        </div>
+

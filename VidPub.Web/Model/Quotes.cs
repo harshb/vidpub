@@ -11,7 +11,9 @@ namespace VidPub.Web.Model
         {
             var quotes = new string[]
             {
-                "Harsh Bhasin"
+                @"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus
+                tellus pulvinar neque, non cursus sem nisi vel augue. </br><b>--John Smith </b>"
                 ,"Ritu Bhasin"
                 ,"Ria Bhasin"
                 ,"Saanvi Bhasin"
