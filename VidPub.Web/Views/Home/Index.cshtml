@@ -1,8 +1,39 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    // dynamic router = new System.Web.Mvc.RouteHelper(Url);
 }
 
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#user_quotes').cycle({
+           // fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+          fx: 'fade',
+          speed: 900,
+          timeout:400,
+          pause:1,
+          pauseOnPagerHover: 0
+        });
+    });
+</script>
+
 <h2>@ViewBag.Message</h2>
-<p>
-    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-</p>
+<p>@Routes.about_path()</p>
+
+
+<div id="user_quotes" >
+    @foreach (dynamic item in VidPub.Web.Model.Quotes.FromUsers())
+    {
+      
+        
+        @Quotes.User(item);
+    }
+</div>
+
+<div class="slideshow2">
+		<img src="http://cloud.github.com/downloads/malsup/cycle/beach1.jpg" width="200" height="200" />
+		<img src="http://cloud.github.com/downloads/malsup/cycle/beach2.jpg" width="200" height="200" />
+		<img src="http://cloud.github.com/downloads/malsup/cycle/beach3.jpg" width="200" height="200" />
+		<img src="http://cloud.github.com/downloads/malsup/cycle/beach4.jpg" width="200" height="200" />
+		<img src="http://cloud.github.com/downloads/malsup/cycle/beach5.jpg" width="200" height="200" />
+	</div>

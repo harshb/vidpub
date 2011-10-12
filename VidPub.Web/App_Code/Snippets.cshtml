@@ -1,0 +1,7 @@
+﻿@functions
+{
+    public static dynamic FooterText()
+    {
+        return new HtmlString(string.Format(" &copy;{0} Published, Inc.", @DateTime.Now.Year));
+    }
+}
