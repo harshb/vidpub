@@ -100,6 +100,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\DBScripts.sql" />
     <Content Include="App_Data\Membership_Dev.sdf" />
     <Content Include="cycle..htm" />
     <Content Include="Infrastructure\Massive.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -117,6 +119,7 @@
     <Compile Include="Infrastructure\VibPubViewPage.cs" />
     <Compile Include="Massive.cs" />
     <Compile Include="Model\AccountModels.cs" />
+    <Compile Include="Model\Productions.cs" />
     <Compile Include="Model\Quotes.cs" />
     <Compile Include="Model\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -223,6 +226,7 @@
     <Content Include="App_Code\Quotes.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Views\Productions\Index.cshtml" />
     <None Include="Views\Shared\_LayoutOld.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
