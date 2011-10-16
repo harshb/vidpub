@@ -12,12 +12,18 @@
         <th>
             Name
         </th>
-        <th></th>
+        <th>
+            Options
+        </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-       @item.Title
+        <td>@item.Title</td>
+        <td>
+            @Html.ActionLink("Edit","edit",new{id = item.ID}) | 
+            @Html.ActionLink("Delete","delete",new{id = item.ID})
+         </td>
     </tr>
 }
 

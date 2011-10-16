@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Create2";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Production</legend>
+
+        <div class="editor-label">
+            Title
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("Title")
+        </div>
+        <div class="editor-label">
+            ChannelID
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("ChannelID")
+        </div>
+        <div class="editor-label">
+            Slug
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("Slug")
+        </div>
+        <div class="editor-label">
+            Description
+        </div>
+        <div class="editor-field">
+            @Html.TextArea("Description")
+        </div>
+        <div class="editor-label">
+            Author
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("Author")
+        </div>
+        <div class="editor-label">
+            Price
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("Price")
+        </div>
+        <div class="editor-label">
+            ReleasedOn
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("ReleasedOn")
+        </div>
+
+
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

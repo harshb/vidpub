@@ -109,9 +109,11 @@
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductionsController.cs" />
+    <Compile Include="Controllers\ProductionsControllerOld.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\CruddyController.cs" />
     <Compile Include="Infrastructure\FormsAuthTokenStore.cs" />
     <Compile Include="Infrastructure\logging\ILogger.cs" />
     <Compile Include="Infrastructure\logging\NLogger.cs" />
@@ -200,11 +202,13 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Home\Shared\Error.cshtml" />
+    <Content Include="Views\Home\Shared\_LogOnPartial.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
@@ -220,15 +224,35 @@
     <Content Include="App_Code\URL.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Shared\_Layout.cshtml" />
     <Content Include="App_Code\Snippets.cshtml" />
     <Content Include="tmp\indexold.cshtml" />
     <Content Include="App_Code\Quotes.cshtml">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="Views\Productions\Index.cshtml" />
-    <None Include="Views\Shared\_LayoutOld.cshtml" />
+    <Content Include="Views\ProductionsOld\Index.cshtml" />
+    <Content Include="Views\ProductionsOld\Create.cshtml" />
+    <Content Include="Views\ProductionsOld\Edit.cshtml" />
+    <None Include="CodeTemplates\AddController\Controller.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Controller.cs</LastGenOutput>
+    </None>
+    <None Include="CodeTemplates\AddView\CSHTML\Create.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Create.cshtml</LastGenOutput>
+    </None>
+    <None Include="CodeTemplates\AddView\CSHTML\Edit.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Edit.cshtml</LastGenOutput>
+    </None>
+    <None Include="CodeTemplates\AddView\CSHTML\List.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>List.cshtml</LastGenOutput>
+    </None>
+    <None Include="Views\Home\Shared\_LayoutOld.cshtml" />
+    <Content Include="Views\Productions\Edit.cshtml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
