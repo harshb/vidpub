@@ -230,9 +230,11 @@
     <Content Include="App_Code\Quotes.cshtml">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="Views\ProductionsOld\Index.cshtml" />
-    <Content Include="Views\ProductionsOld\Create.cshtml" />
-    <Content Include="Views\ProductionsOld\Edit.cshtml" />
+    <Content Include="Views\Productions\IndexOld.cshtml" />
+    <Content Include="Views\Productions\Create.cshtml" />
+    <Content Include="Views\Productions\Edit.cshtml" />
+    <Content Include="App_Code\Form.cshtml" />
+    <Content Include="App_Code\Assets.cshtml" />
     <None Include="CodeTemplates\AddController\Controller.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Controller.cs</LastGenOutput>
@@ -250,7 +252,7 @@
       <LastGenOutput>List.cshtml</LastGenOutput>
     </None>
     <None Include="Views\Home\Shared\_LayoutOld.cshtml" />
-    <Content Include="Views\Productions\Edit.cshtml" />
+    <Content Include="Views\Productions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
