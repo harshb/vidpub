@@ -1,31 +1,38 @@
 ﻿@{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<div class="column span-18">
-    <h1>@ViewBag.Table.TableName</h1>
-    <table>
-        <tr>
-            <td>Name</td>
-            <td>Options</td>
-        </tr>
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                <a href="@Url.Action("details",new {id = Form.PK(ViewBag.Table,item)})">
-                    @Form.Descriptor(item)
-                </a>
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Options
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.Title</td>
+        <td>
+            @Html.ActionLink("Edit","edit",new{id = item.ID}) | 
+           <!-- @Html.ActionLink("Delete","Delete", new{id = item.ID})-->
+         </td>
+           <td>
+                @using (Html.BeginForm("Delete", "Productions"))
+                {
+                   //  @Html.AntiForgeryToken()
+                    // @Form.HiddenID(item.ID)
+                    <input type="submit" value="Delete" />
+                }
             </td>
-            <td>
-                @Html.ActionLink("Edit","edit",new {id = Form.PK(ViewBag.Table,item)}) | 
-                <a href="@Url.Action("delete",new { id = Form.PK(ViewBag.Table, item) })" class="delete-link">Delete</a>
-            </td>
-        </tr>
-    }
-    </table>
-    <div class="clear"></div>
-    <hr />
-    <div class="column span-16">
-        @Html.ActionLink("Create New","create")
-    </div>
-</div>
+    </tr>
+}
+
+</table>

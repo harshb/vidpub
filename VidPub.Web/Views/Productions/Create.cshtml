@@ -6,28 +6,37 @@
 <h2>Create</h2>
 
 @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
     <fieldset>
         <legend>Production</legend>
-
+        <!--
         <div class="editor-label">
             Title
         </div>
         <div class="editor-field">
             @Html.TextBox("Title")
         </div>
+        -->
+         @Form.TextBoxRequired(name: "Title", value: Model.Title)
+
         <div class="editor-label">
             ChannelID
         </div>
+        
         <div class="editor-field">
             @Html.TextBox("ChannelID")
         </div>
+        <!--
         <div class="editor-label">
             Slug
         </div>
         <div class="editor-field">
             @Html.TextBox("Slug")
         </div>
+        -->
+        @Form.TextBoxRequired(name: "Slug", value: Model.Slug)
+
         <div class="editor-label">
             Description
         </div>

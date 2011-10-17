@@ -11,17 +11,22 @@ namespace VidPub.Web.Infrastructure {
         public CruddyController(ITokenHandler tokenStore):base(tokenStore) {}
 
         protected dynamic _table;
+
+       [RequireAdmin]
         public virtual ActionResult Index() {
             return View(_table.All());
         }
         public virtual ActionResult Details(int id) {
             return View(_table.FindBy(ID: id, schema: true));
         }
+
+        [RequireAdmin]
         public ActionResult Create() {
             return View(_table.Prototype);
         }
 
         [HttpPost]
+        [RequireAdmin]
         [ValidateAntiForgeryToken]
         public virtual ActionResult Create(FormCollection collection) {
             var model = _table.CreateFrom(collection);
@@ -35,12 +40,14 @@ namespace VidPub.Web.Infrastructure {
             }
         }
 
+        [RequireAdmin]
         public virtual ActionResult Edit(int id) {
             var model = _table.Get(ID: id);
             model._Table = _table;
             return View(model);
         }
 
+        [RequireAdmin]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public virtual ActionResult Edit(int id, FormCollection collection) {
@@ -55,6 +62,7 @@ namespace VidPub.Web.Infrastructure {
             }
         }
 
+        [RequireAdmin]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public virtual ActionResult Delete(int id) {

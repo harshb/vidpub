@@ -1,69 +1,46 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <title>@Page.Title</title>
     <script type="text/javascript" src="http://use.typekit.com/yxo3unq.js"></script>
-    @HTML.jQuery(false)
-    @HTML.CSS("screen.css")
-    @HTML.CSS("print.css", "print")
-    @HTML.CSS("screen.css")
-    @HTML.CSS("plugins/fancy-type/screen.css")
-    @HTML.Script("jquery.cycle.all.js")
-  
+    @Assets.jQuery(true)
+    @Assets.CSS("screen.css")
+    @Assets.CSS("print.css", "print")
+    @Assets.CSS("screen.css")
+    @Assets.CSS("Site.css")
+
+    @Assets.CSS("plugins/fancy-type/screen.css")
+    @Assets.Script("jquery.cycle.all.js")
+    @Assets.Script("jquery.validate.min.js")
+    @Assets.Script("jquery.validate.unobtrusive.min.js")
+
     <!--[if lt IE 8]><link rel="stylesheet" href="/public/stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
 </head>
 <body>
     <div class="container">
         <div class="span-16 prepend-6">
-            @HTML.ImageLink(URL.SiteRoot(), "publishedLogo.bmp")
+            @Assets.ImageLink(URL.SiteRoot(), "publishedLogo.bmp")
         </div>
         <hr>
-        <hr class="space">
-        <div class="span-7 colborder">
-            <h6>
-                Here's a box</h6>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip.</p>
+         <div class="span-6 last" id="logindisplay">
+            @Html.Partial("_LogOnPartial")
         </div>
-        <div class="span-8 colborder">
-            <h6>
-                And another box</h6>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat laboris nisi
-                ut aliquip.</p>
-        </div>
-        <div class="span-7 last">
-            <h6>
-                This box is aligned with the sidebar</h6>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip.</p>
-        </div>
-        <hr>
         <hr class="space">
 
         @RenderBody()
 
         <!--footer---->
         <hr>
-        <h2 class="alt">
-            You may pick and choose amongst these and many more features, so be bold.</h2>
+      
         <p>
-          &copy;@DateTime.Now.Year Published, Inc.
-          @Snippets.FooterText();
+            &copy;@DateTime.Now.Year Published, Inc.
+            @Snippets.FooterText();
         </p>
+
         <hr>
-        <p>
-            <a href="http://validator.w3.org/check?uri=referer">Validate  </a>     
-           
-        </p>
+      
     </div>
 </body>
 </html>
+
