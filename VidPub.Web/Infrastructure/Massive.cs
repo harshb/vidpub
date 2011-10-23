@@ -121,8 +121,8 @@ namespace Massive {
             PrimaryKeyField = string.IsNullOrEmpty(primaryKeyField) ? "ID" : primaryKeyField;
             
             //hb
-            //var _providerName = "System.Data.SqlClient";
-            string _providerName = "System.Data.SqlServerCe.4.0";
+            var _providerName = "System.Data.SqlClient";
+            //string _providerName = "System.Data.SqlServerCe.4.0";
 
             _factory = DbProviderFactories.GetFactory(_providerName);
             ConnectionString = ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString;

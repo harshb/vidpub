@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@Assets.Script("vidpub-search.js");
+
+<!--JQuery Template-->
+
+<script id ="searchTemplate" type = "text/html">
+   <table>
+        {{each items}}
+            <tr>
+                <td>
+                    <a href='${controller}/edit/${ID}'> ${Title} </a>
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+</script>
+
+<h2>Vidpub Admin</h2>
+
+
+<form id="searchForm">
+    <label>Find1:</label>
+    <input type="text" id="search" />
+    <input type="submit" value="go" />
+</form>
+
+<h1>Productions</h1>
+<div id="productions-search-results" class="search-results"></div>
+<h1>Episodes</h1>
+<div id="episodes-search-results" class="search-results"></div>
+<h1>Customers</h1>
+<div id="customers-search-results" class="search-results"></div>
+
+
+
+     
