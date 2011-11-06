@@ -67,6 +67,13 @@ ListView = Backbone.View.extend({
         $(this.el).html(html);
 
         return this;
+    },
+
+    //thanks to: derik bailey's backbone.modelbinding.min.js
+    close: function () {
+        this.remove();
+        this.unbind();
+        
     }
 
 });
@@ -83,7 +90,7 @@ FormView = Backbone.View.extend({
     },
     events: {
 
-        "change input": "updateModel",
+       // "change input": "updateModel",
         "submit #productionForm": "save"
     },
 
@@ -137,9 +144,18 @@ FormView = Backbone.View.extend({
 
         var html = this.template.tmpl(this.model.toJSON());
         $(this.el).html(html);
-
         this.$(".datepicker").datepicker();
+
+        // execute the model bindings
+        //thanks to: derik bailey's backbone.modelbinding.min.js
+        Backbone.ModelBinding.bind(this);
         return this;
+    },
+    //thanks to: derik bailey's backbone.modelbinding.min.js
+    close: function () {
+        this.remove();
+        this.unbind();
+        Backbone.ModelBinding.unbind(this);
     }
 
 });

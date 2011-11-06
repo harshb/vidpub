@@ -140,6 +140,7 @@
     <Content Include="App_Readme\glimpse.readme.txt" />
     <Content Include="Public\images\publishedLogoSmall.bmp" />
     <Content Include="Public\javascripts\backbone-min.js" />
+    <Content Include="Public\javascripts\backbone.modelbinding.min.js" />
     <Content Include="Public\javascripts\jquery.cycle.all.js" />
     <Content Include="Public\javascripts\jquery.tmpl.min.js" />
     <Content Include="Public\javascripts\kloutdb.js" />
