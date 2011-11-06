@@ -18,6 +18,10 @@ namespace VidPub.Web.Controllers
         {
             return View();
         }
+        public ActionResult Productions()
+        {
+            return View();
+        }
     }
 }
 
