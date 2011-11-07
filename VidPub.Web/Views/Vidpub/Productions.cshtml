@@ -25,10 +25,11 @@
  <form  id ="productionForm" class="vidform">
 
         @Template.TextBox("Title")
-        @Template.TextBox("Author")
+        @Template.Combo("AuthorCombo")
         @Template.TextBoxNumber("Price")
         @Template.TextArea("Description")
         @Template.TextBoxDate("ReleasedOn")
+        @Template.HiddenBox("Author");
         @Template.Submit()
 
  </form>

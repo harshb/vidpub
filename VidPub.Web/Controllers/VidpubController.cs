@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using VidPub.Web.Model;
 using VidPub.Web.Infrastructure;
+using System.Dynamic;
 namespace VidPub.Web.Controllers
 {
     public class VidpubController : ApplicationController
@@ -22,6 +23,7 @@ namespace VidPub.Web.Controllers
         {
             return View();
         }
+       
     }
 }
 

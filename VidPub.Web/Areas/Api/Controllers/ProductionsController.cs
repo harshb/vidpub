@@ -7,6 +7,7 @@ using VidPub.Web.Model;
 using VidPub.Web.Infrastructure;
 using VidPub.Web.Controllers;
 using Massive;
+using System.Dynamic;
 namespace VidPub.Web.Areas.Api.Controllers
 {
     public class ProductionsController : ApplicationController
@@ -40,6 +41,23 @@ namespace VidPub.Web.Areas.Api.Controllers
             return VidpubJSON(model);
         }
 
-    }
-}
+        ///api/productions/authors
+        //to test combo box
+        [HttpGet]
+        public ActionResult authors()
+        {
+            dynamic authors = new List<dynamic>();
+            authors.Add(new ExpandoObject());
+            authors[0].Text = "hb";
+            authors[0].Value = "1";
+
+            authors.Add(new ExpandoObject());
+            authors[1].Text = "Joe Blow";
+            authors[1].Value = "2";
+
+            return VidpubJSON(authors);
+
+        }
+    }//
+}//
 

@@ -8,6 +8,21 @@
         <input type="text" name="@name" id="@name" value="${@name}" />
     </p>
 }
+
+@helper Combo(string name) {
+    <p>
+        <label>@name</label>
+        <select id="@name"> </select>
+    </p>
+}
+
+@helper HiddenBox(string name) {
+   
+        
+        <input type="hidden" name="@name" id="@name" value="${@name}" />
+   
+}
+
 @helper TextBoxDate(string name) {
     <p>
         <label>@name</label>

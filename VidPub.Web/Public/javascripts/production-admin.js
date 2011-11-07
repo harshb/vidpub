@@ -86,11 +86,12 @@ FormView = Backbone.View.extend({
         //scope of this is this view for mentioned methods
         _.bindAll(this, 'render');
         this.template = $("#productionFormTemplate");
+        
 
     },
     events: {
 
-       // "change input": "updateModel",
+        // "change input": "updateModel",
         "submit #productionForm": "save"
     },
 
@@ -129,6 +130,7 @@ FormView = Backbone.View.extend({
 
     },
     */
+    /*
     updateModel: function (evt) {
         var field = $(evt.currentTarget);
         var data = {};
@@ -140,11 +142,37 @@ FormView = Backbone.View.extend({
             field.val(this.model.get(key));
         }
     },
+    */
+
+    //combo
+    fillCombo: function () {
+
+        $.getJSON("/api/productions/authors", function (data) {
+            //alert(data.length);
+            var theauthor = formView.model.get("Author");
+
+            
+            var items = "<option selected " + theauthor + ">" +  theauthor + "</option>";
+            $.each(data, function (i, item) {
+                items += "<option value='" + item.Value + "'>" + item.Text + "</option>";
+            });
+            $("#AuthorCombo").html(items);
+
+            //set selected
+            $("#AuthorCombo").val(theauthor);
+
+        });
+
+    },
     render: function () {
 
         var html = this.template.tmpl(this.model.toJSON());
         $(this.el).html(html);
         this.$(".datepicker").datepicker();
+
+        //combo
+        this.fillCombo();
+
 
         // execute the model bindings
         //thanks to: derik bailey's backbone.modelbinding.min.js
